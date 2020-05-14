@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        
+        <title>INTEGRAL CALCULATOR</title>
+        <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-MML-AM_CHTML"></script>                                                                                                                                      
+  
+        <style>
+            *{
+                margin: auto;
+                padding: 0%;
+                background-image: linear-gradient(90deg, #dce1e8, #dce1e8);
+            }
+            h2 {
+                color:  black;
+                font-family: cursive;
+                padding: 50;
+                text-align: center;
+                letter-spacing: 10px;
+                top:10%;
+                font-size: xx-large;
+            }
+            h4 {
+                font-weight: lighter;
+            }
+            .input_exp{
+                color: rgb(26, 0, 26);
+                font-style: normal;
+                font-family: cursive;
+                font-size: large;
+                background: none;
+                border: 0;
+                text-align: center;
+                border: 2px solid #3263b3;
+                border-radius: 24px;
+                padding: 14px 10px;
+                
+            }
+            .latex {
+                color: rgb(26, 0, 26);
+                font-size: xx-large;
+                font-family: cursive;
+                font-weight: lighter;
+                top: 30%;
+            }
+            .pass {
+                color: rgb(26, 0, 26);
+                font-size: large;
+                background: wheat;
+                padding: 20;
+                font-family: cursive; 
+                padding: 14px 10px;
+            }
+            .myform {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -30%);
+                text-align: center;
+                padding: 14px 10px;
+                margin: 20px auto;
+            }
+            
+        </style>
+    </head>
+    <body>
+        <h2>INTEGRATION</h2>
+        <br><br><br>
+        <form action='/' role="form" method='POST' class="myform">
+           <input type="text" class="input_exp" name="data" placeholder="integral..." id="url-box" autofocus required>
+           <br><br>
+           <button class="pass" type="submit">INTEGRATE</button>
+        </form>
+
+        <br>
+        {%  for error in errors  %}
+           <h4>{{ error }}</h4>
+        {% endfor %}
+        <div class="latex"> 
+            {% if results == None %}
+               {{ ' ' }}
+            {% else %}
+               <h4>{{ results }}</h4>
+            {% endif %}   
+        </div>
+    </body>
+</html>
